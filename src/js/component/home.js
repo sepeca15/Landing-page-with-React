@@ -5,6 +5,38 @@ import { Jumbotron } from "./Jumbotron";
 import { Card } from "./DivCard";
 import { Footer } from "./footer";
 
+let personajes = [
+    {title:"Valentina",
+    imageUrl:"https://picsum.photos/200/300",
+    description:"Son integrante del Primer mejor grupo.",
+    buttonUrl:"https://en.wikipedia.org/wiki/Valentina",
+    buttonLabel:"Go to wikipedia"},
+    {title:"Rosario",
+    imageUrl:"https://picsum.photos/200/301",
+    description:"Son integrante del Primer mejor grupo.",
+    buttonUrl:"https://en.wikipedia.org/wiki/Rosario",
+    buttonLabel:"Go to wikipedia"},
+    {title="Natalia",
+    imageUrl:"https://picsum.photos/200/302",
+    description:"Son integrante del Primer mejor grupo.",
+    buttonUrl:"https://en.wikipedia.org/wiki/Natalia",
+    buttonLabel:"Go to wikipedia"},
+    {title:"Nicolas",
+    imageUrl:"https://picsum.photos/200/303",
+    description:"Son integrante del Primer mejor grupo.",
+    buttonUrl:"https://en.wikipedia.org/wiki/Nicolas",
+    buttonLabel:"Go to wikipedia"},
+    {title:"Seba",
+    imageUrl:"https://picsum.photos/200/304",
+    description:"Son integrante del Primer mejor grupo.",
+    buttonUrl:"https://en.wikipedia.org/wiki/Seba",
+    buttonLabel:"Go to wikipedia"},
+    {title:"Grupo 6",
+    imageUrl:"https://picsum.photos/200/305",
+    description:"Son integrante del Primer mejor grupo.",
+    buttonUrl:"https://en.wikipedia.org/wiki/Seba",
+    buttonLabel:"Go to wikipedia"}
+];
 //create your first component
 export function Home() {
 	return (
@@ -24,48 +56,18 @@ export function Home() {
 			</div>
 			<div className="container">
 				<div id="DivCard" className="row">
-					<Card
-						title="Valentina"
-						imageUrl="https://picsum.photos/200/300"
-						description="Son integrante del Primer mejor grupo."
-						buttonUrl="https://en.wikipedia.org/wiki/Valentina"
-						buttonLabel="Go to wikipedia"
-					/>
-					<Card
-						title="Rosario"
-						imageUrl="https://picsum.photos/200/301"
-						description="Son integrante del Primer mejor grupo."
-						buttonUrl="https://en.wikipedia.org/wiki/Rosario"
-						buttonLabel="Go to wikipedia"
-					/>
-					<Card
-						title="Natalia"
-						imageUrl="https://picsum.photos/200/302"
-						description="Son integrante del Primer mejor grupo."
-						buttonUrl="https://en.wikipedia.org/wiki/Natalia"
-						buttonLabel="Go to wikipedia"
-					/>
-					<Card
-						title="Nicolas"
-						imageUrl="https://picsum.photos/200/303"
-						description="Son integrante del Primer mejor grupo."
-						buttonUrl="https://en.wikipedia.org/wiki/Nicolas"
-						buttonLabel="Go to wikipedia"
-					/>
-					<Card
-						title="Seba"
-						imageUrl="https://picsum.photos/200/304"
-						description="Son integrante del Primer mejor grupo."
-						buttonUrl="https://en.wikipedia.org/wiki/Seba"
-						buttonLabel="Go to wikipedia"
-					/>
-					<Card
-						title="Grupo 6"
-						imageUrl="https://picsum.photos/200/305"
-						description="Son integrante del Primer mejor grupo."
-						buttonUrl="https://en.wikipedia.org/wiki/Seba"
-						buttonLabel="Go to wikipedia"
-					/>
+					{personajes.map((personaje, i) => {
+						return (
+							<Card
+								key={i}
+								title={personaje.title}
+								imageUrl={personaje.imageUrl}
+                                description={personaje.description}
+                                buttonUrl={personaje.buttonUrl}
+                                buttonLabel={personaje.buttonLabel}
+							/>
+						);
+					})}
 				</div>
 			</div>
 			<div id="Footer">
